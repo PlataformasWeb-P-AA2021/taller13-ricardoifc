@@ -1,0 +1,40 @@
+{% extends "master.html" %}
+
+{% block content %}
+<h2>Crear Departamento</h3>
+
+<form action="" method="post">
+
+  {% csrf_token %}
+
+  {{ formulario.non_field_errors }}
+  <div class="fieldWrapper">
+    {{ formulario.propietario.errors }}
+    <label for="{{ formulario.propietario.id_for_label }}">Ingrese propietario:</label>
+    {{ formulario.propietario }}
+  </div>
+  <br>
+  <div class="fieldWrapper">
+    {{ formulario.costoDep.errors }}
+    <label for="{{ formulario.costoDep.id_for_label }}">Ingrese costo de Departamento:</label>
+    {{ formulario.costoDep }}
+  </div>
+  <br>
+  <div class="fieldWrapper">
+    {{ formulario.numCuartos.errors }}
+    <label for="{{ formulario.numCuartos.id_for_label }}">Ingrese numero de cuartos:</label>
+    {{ formulario.numCuartos }}
+  </div>
+  <br>
+  <div class="fieldWrapper">
+    {{ formulario.edificio.errors }}
+    <label for="{{ formulario.edificio.id_for_label }}">Ingrese edificio:</label>
+    {{ formulario.edificio }}
+  </div>
+
+  <p><input type='submit' value='Agregar'/></p>
+
+</form>
+
+{% endblock %}
+
